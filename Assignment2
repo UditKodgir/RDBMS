@@ -1,0 +1,23 @@
+			Assignment 2
+
+
+
+1) Which field of the Customers table is the primary key?
+
+Answer :- Cnum
+
+
+2) What is the 4 th column of the Customers table?
+
+Answer :- Ratings
+
+
+3) What is another word for row? For column?
+
+Answer :- Row = Tuple,Oppurtunity
+	Column = Attribut,Method
+
+
+4) Why isn’t it possible to see the first five rows of a table?
+
+Answer :- In mysql there is no first function.
