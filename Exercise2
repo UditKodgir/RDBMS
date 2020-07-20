@@ -1,0 +1,122 @@
+				Exercise 2
+
+
+
+Q.1.
+
+Answer :- 
+
+Select * from SUPPLIER ORDER BY City desc;
+
+OUTPUT :-
+
++------+--------+--------+----------+
+| S#   | Sname  | Status | City     |
++------+--------+--------+----------+
+| S5   | logon  |     60 | Sydeny   |
+| S2   | XYZ    |     20 | Paris    |
+| S6   | jacker |     50 | New York |
+| S1   | ABC    |     10 | London   |
+| S4   | Jolly  |     40 | Boston   |
+| S3   | arun   |     30 | Athens   |
++------+--------+--------+----------+
+
+
+Q.2.
+
+Answer :- 
+
+Select * from PARTS ORDER BY City , Pname asc;
+
+OUTPUT :-
+
++------+---------+--------+--------+----------+
+| P#   | Pname   | Color  | Weight | City     |
++------+---------+--------+--------+----------+
+| P3   | part c  | red    |  34.00 | Athens   |
+| P4   | part d  | yellow |  78.98 | Boston   |
+| P1   | part a  | blue   |  56.90 | London   |
+| P6   | part f  | black  |  54.87 | New York |
+| P2   | part b  | green  |  67.40 | Paris    |
+| P5   | part e  | green  |  34.65 | Sydeny   |
++------+---------+--------+--------+----------+
+
+ 
+Q.3.
+
+Answer :-
+ 
+Select * from SUPPLIER where Status between 10 and 20;
+
+OUTPUT :-
+
++------+-------+--------+--------+
+| S#   | Sname | Status | City   |
++------+-------+--------+--------+
+| S1   | ABC   |     10 | London |
+| S2   | XYZ   |     20 | Paris  |
++------+-------+--------+--------+
+ 
+
+Q.4. 
+
+Answer :- 
+
+Select Pname, Weight from PARTS where Weight not between 10 and 15;
+
+OUTPUT :-
+
++---------+--------+
+| Pname   | Weight |
++---------+--------+
+| part a  |  56.90 |
+| part b  |  67.40 |
+| part c  |  34.00 |
+| part d  |  78.98 |
+| part e  |  34.65 |
+| part f  |  54.87 |
++---------+--------+
+
+
+Q.5
+
+Answer :- 
+
+Select Pname from PARTS where Pname like 's%' AND 'S%';
+
+OUTPUT :-
+
+Empty set, 1 warning (0.00 sec)
+
+
+Q.6. 
+
+Answer :- 
+
+Select * from SUPPLIER where City like 'L%' OR 'l%';
+
+OUTPUT :-
+
++------+-------+--------+--------+
+| S#   | Sname | Status | City   |
++------+-------+--------+--------+
+| S1   | ABC   |     10 | London |
++------+-------+--------+--------+
+
+
+Q.7. 
+
+Answer :-
+
+Select * from PROJECTS where Jname like '__n%';
+
+OUTPUT :-
+
++------+-----------------+--------+
+| J#   | Jname           | City   |
++------+-----------------+--------+
+| J5   | BANK MANAGMENT  | Sydeny |
++------+-----------------+--------+
+
+
+
