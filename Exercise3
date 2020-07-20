@@ -1,0 +1,184 @@
+				Exercise 3
+
+
+
+Q.1.
+
+Answer :-
+
+select concat(upper(substr(Sname,1,1)),lower(substr(Sname,2))) as Name from SUPPLIER;
+
+OUTPUT :-
+
++--------+
+| Name   |
++--------+
+| Abc    |
+| Xyz    |
+| Arun   |
+| Jolly  |
+| Logon  |
+| Jacker |
++--------+
+
+
+Q.2.
+
+Answer :-
+
+select upper(Sname) from SUPPLIER;
+
+OUTPUT :-
+
++--------------+
+| upper(Sname) |
++--------------+
+| ABC          |
+| XYZ          |
+| ARUN         |
+| JOLLY        |
+| LOGON        |
+| JACKER       |
++--------------+
+
+
+Q.3.
+
+Anwer :- 
+
+select lower(Sname) from SUPPLIER;
+
+OUTPUT :-
+
++--------------+
+| lower(Sname) |
++--------------+
+| abc          |
+| xyz          |
+| arun         |
+| jolly        |
+| logon        |
+| jacker       |
++--------------+
+
+
+Q.4.
+
+Answer :- 
+
+select lpad(Sname,25,' ') from SUPPLIER;
+
+OUTPUT :-
+
++---------------------------+
+| lpad(Sname,25,' ')        |
++---------------------------+
+|                       ABC |
+|                       XYZ |
+|                      arun |
+|                     Jolly |
+|                     logon |
+|                    jacker |
++---------------------------+
+
+
+Q.5.
+
+Answer :-
+
+select replace(Sname,'la','ro') from SUPPLIER;
+
+OUTPUT :-
+
++--------------------------+
+| replace(Sname,'la','ro') |
++--------------------------+
+| ABC                      |
+| XYZ                      |
+| arun                     |
+| Jolly                    |
+| logon                    |
+| jacker                   |
++--------------------------+
+
+
+Q.6.
+
+Answer :- 
+
+select replace(replace(Sname,'l','r'),'a','o') from SUPPLIER;
+
+OUTPUT :-
+
++-----------------------------------------+
+| replace(replace(Sname,'l','r'),'a','o') |
++-----------------------------------------+
+| ABC                                     |
+| XYZ                                     |
+| orun                                    |
+| Jorry                                   |
+| rogon                                   |
+| jocker                                  |
++-----------------------------------------+
+
+
+Q.7.
+
+Answer :- 
+
+SELECT Sname, Length (Sname) length from SUPPLIER;
+
+OUTPUT :-
+
++--------+--------+
+| Sname  | length |
++--------+--------+
+| ABC    |      3 |
+| XYZ    |      3 |
+| arun   |      4 |
+| Jolly  |      5 |
+| logon  |      5 |
+| jacker |      6 |
++--------+--------+
+
+
+Q.8.
+
+Answer :-
+
+select * from SUPPLIER where soundex(Sname)=soundex('aruun');
+
+OUTPUT :-
+
++------+-------+--------+--------+
+| S#   | Sname | Status | City   |
++------+-------+--------+--------+
+| S3   | arun  |     30 | Athens |
++------+-------+--------+--------+
+
+
+Q.10.
+
+Answer :-
+
+select DAY(2020/07/20) from dual;
+
+OUTPUT :-
+
++-----------------+
+| DAY(2020/07/20) |
++-----------------+
+|            NULL |
++-----------------+
+
+select dayname(now());
+
+OUTPUT :-
+
++----------------+
+| dayname(now()) |
++----------------+
+| Monday         |
++----------------+
+
+
