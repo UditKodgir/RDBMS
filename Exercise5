@@ -1,0 +1,205 @@
+					Exercise 5
+
+
+
+Q.1.
+
+Answer :- 
+
+select Sname, Qty from SUPPLIER S, SUPPLIER_PARTS_PROJECTS S1 where S.`S#` = S1.`S#`;
+
+OUTPUT :-
+
++--------+--------+
+| Sname  | Qty    |
++--------+--------+
+| ABC    | 123.45 |
+| XYZ    | 243.55 |
+| arun   | 123.55 |
+| Jolly  | 523.35 |
+| logon  | 223.65 |
+| jacker | 235.75 |
++--------+--------+
+
+
+Q.2.
+
+Answer :- 
+
+select Pname, Qty from PARTS P, SUPPLIER_PARTS_PROJECTS S1 where P.`P#` = S1.`P#`;
+
+OUTPUT :-
+
++--------+--------+
+| Pname  | Qty    |
++--------+--------+
+| part b | 123.45 |
+| part d | 243.55 |
+| part c | 123.55 |
+| part f | 523.35 |
+| part c | 223.65 |
+| part a | 235.75 |
++--------+--------+
+
+
+Q.3.
+
+Answer :- 
+
+select Jname, Qty from PROJECTS P, SUPPLIER_PARTS_PROJECTS S1 where P.`J#` = S1.`J#`;
+
+OUTPUT :-
+
++-----------------+--------+
+| Jname           | Qty    |
++-----------------+--------+
+| ADS             | 123.45 |
+| ALS             | 243.55 |
+| ALS             | 123.55 |
+| ALS             | 523.35 |
+| BANK MANAGMENT  | 223.65 |
+| INCEPTION       | 235.75 |
++-----------------+--------+
+
+
+Q.4.
+
+Answer :- 
+
+select Pname, Jname, Sname, Qty from SUPPLIER S, PARTS P, PROJECTS P1, SUPPLIER_PARTS_PROJECTS S1 where S.`S#` = S1.`S#` AND  P.`P#` = S1.`P#` AND P1.`J#` = S1.`J#`;
+
+OUTPUT :-
+
++--------+-----------------+--------+--------+
+| Pname  | Jname           | Sname  | Qty    |
++--------+-----------------+--------+--------+
+| part a | INCEPTION       | jacker | 235.75 |
+| part b | ADS             | ABC    | 123.45 |
+| part c | BANK MANAGMENT  | logon  | 223.65 |
+| part c | ALS             | arun   | 123.55 |
+| part d | ALS             | XYZ    | 243.55 |
+| part f | ALS             | Jolly  | 523.35 |
++--------+-----------------+--------+--------+
+
+
+Q.5.
+
+Answer :- 
+
+select S.Sname, P.City from SUPPLIER S, PARTS P, PROJECTS P1, SUPPLIER_PARTS_PROJECTS S1 where S.`S#` = S1.`S#`AND P.`P#` = S1.`P#`AND P1.`J#` = S1.`J#` AND P.City = P1.City;
+
+OUTPUT :-
+
++-------+----------+
+| Sname | City     |
++-------+----------+
+| Jolly | New York |
++-------+----------+
+
+Q.6.
+
+Answer :-
+
+select Pname, Color, Qty from PARTS P, SUPPLIER_PARTS_PROJECTS S where Color = 'red' AND P.`P#` = S.`P#`;
+
+OUTPUT :-
+
+
+Q.7.
+
+Answer :- 
+
+OUTPUT :-
+
+
+Q.8.
+
+Answer :- 
+
+OUTPUT :-
+
+
+Q.9.
+
+Answer :- 
+
+OUTPUT :-
+
+
+Q.10.
+
+Answer :- 
+
+OUTPUT :-
+
+
+Q.11.
+
+Answer :- 
+
+OUTPUT :-
+
+
+
+
+#2
+
+
+
+
+#3
+
+select Jname, Qty from PROJECTS P, SUPPLIER_PARTS_PROJECTS S1 where P.`J#` = S1.`J#`;
+
+
+#4
+
+select Pname, Jname, Sname, Qty from SUPPLIER S, PARTS P, PROJECTS P1, SUPPLIER_PARTS_PROJECTS S1 where S.`S#` = S1.`S#` AND  P.`P#` = S1.`P#` AND P1.`J#` = S1.`J#`;
+
+
+
+#5
+
+select S.Sname, P.City from SUPPLIER S, PARTS P, PROJECTS P1, SUPPLIER_PARTS_PROJECTS S1
+where S.`S#` = S1.`S#`AND P.`P#` = S1.`P#`AND P1.`J#` = S1.`J#` AND P.City = P1.City;
+      
+
+
+#6
+
+select Pname, Color, Qty from PARTS, SUPPLIER_PARTS_PROJECTS where Color = 'red' AND PARTS.`P#` = SUPPLIER_PARTS_PROJECTS.`P#`;
+
+
+
+
+
+
+#7
+
+select Sname, Qty, Status from SUPPLIER S, SUPPLIER_PARTS_PROJECTS S1 where S.`S#` = S1.`S#` AND S.Status = 20;
+
+
+
+#8
+
+select Pname from PARTS P, SUPPLIER_PARTS_PROJECTS S where P.`P#` = S.`P#` AND P.Weight > 14;
+
+
+
+#9
+
+select * from PROJECTS P, SUPPLIER_PARTS_PROJECTS S where P.`J#` = S.`J#` AND S.Qty > 500;
+
+
+
+#10
+
+select Pname, Qty from PARTS P, SUPPLIER_PARTS_PROJECTS S where P.`P#` = S.`P#` AND S.Qty < 15;
+
+
+
+
+#11
+
+select b.ename as Employee, a.ename as Manager from emp a , emp b 
+where b.mgr = a.empno ;
