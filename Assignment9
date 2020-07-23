@@ -1,0 +1,92 @@
+			                  Assignment 9
+
+
+
+Q.1.
+
+Answer :- 
+
+select Onum, Cname from Customers, Orders where Orders.Cnum = Customers.Cnum;
+
+OUTPUT :- 
+
++------+----------+
+| Onum | Cname    |
++------+----------+
+| 3001 | Cisneros |
+| 3003 | Hoffman  |
+| 3002 | Pereira  |
+| 3005 | Liu      |
+| 3006 | Cisneros |
+| 3009 | Giovanni |
+| 3007 | Grass    |
+| 3008 | Clemens  |
+| 3010 | Grass    |
+| 3011 | Clemens  |
++------+----------+
+
+
+Q.2.
+
+Answer :- 
+
+select Sname, Cname, Onum from SalesPeople, Customers, Orders where Orders.Cnum = Customers.Cnum AND Orders.Snum = SalesPeople.Snum;
+
+OUTPUT :- 
+
++---------+----------+------+
+| Sname   | Cname    | Onum |
++---------+----------+------+
+| Peel    | Hoffman  | 3003 |
+| Axelord | Giovanni | 3009 |
+| Serres  | Liu      | 3005 |
+| Serres  | Grass    | 3007 |
+| Serres  | Grass    | 3010 |
+| Peel    | Clemens  | 3008 |
+| Peel    | Clemens  | 3011 |
+| Rifkin  | Cisneros | 3001 |
+| Rifkin  | Cisneros | 3006 |
+| Motika  | Pereira  | 3002 |
++---------+----------+------+
+
+
+Q.3.
+
+Answer :- 
+
+select Cname, Sname, Comm from Customers, SalesPeople where Customers.Snum = SalesPeople.Snum AND Comm > .12;
+
+OUTPUT :- 
+
++----------+--------+------+
+| Cname    | Sname  | Comm |
++----------+--------+------+
+| Liu      | Serres | 0.13 |
+| Grass    | Serres | 0.13 |
+| Cisneros | Rifkin | 0.15 |
++----------+--------+------+
+
+
+Q.4.
+
+Answer :-
+
+select Amt*Comm, Rating from SalesPeople, Orders, Customers where SalesPeople.Snum = Orders.Snum AND Orders.Cnum = Customers.Cnum AND Rating >100;
+
+OUTPUT :-
+
++----------+--------+
+| Amt*Comm | Rating |
++----------+--------+
+|   670.86 |    200 |
+|     9.85 |    300 |
+|   170.29 |    300 |
+|     2.80 |    300 |
+|   164.72 |    300 |
+|   171.32 |    200 |
++----------+--------+
+
+
+
+
+
