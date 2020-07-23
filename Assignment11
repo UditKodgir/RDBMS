@@ -1,0 +1,52 @@
+					Assignment 11
+
+
+
+Q.1.
+
+Answer :-
+
+select * from Orders where Cnum = (select Cnum from Customers where Cname ='Cisneros');
+
+OUTPUT :-
+
++------+---------+------------+------+------+
+| Onum | Amt     | Odate      | Cnum | Snum |
++------+---------+------------+------+------+
+| 3001 |   18.69 | 1990-10-03 | 2008 | 1007 |
+| 3006 | 1098.16 | 1990-10-03 | 2008 | 1007 |
++------+---------+------------+------+------+
+
+
+Q.2.
+
+Answer :-
+
+select Rating, Cname from Customers where Cnum in( select Cnum from Orders where Amt > (select round(AVG(Amt)) from Orders));
+
+OUTPUT :-
+
++--------+---------+
+| Rating | Cname   |
++--------+---------+
+|    200 | Liu     |
+|    100 | Clemens |
++--------+---------+
+
+
+Q.3.
+
+Answer :-
+
+select Snum, SUM(Amt) from Orders GROUP BY Snum HAVING SUM(Amt) > (select MAX(Amt) from Orders); 
+
+OUTPUT :-
+
++------+----------+
+| Snum | SUM(Amt) |
++------+----------+
+| 1001 | 15382.07 |
++------+----------+
+
+
+
