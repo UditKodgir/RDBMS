@@ -1,0 +1,108 @@
+				          Assignment 7
+
+
+
+
+Q.1.
+
+Answer :- 
+
+select count(Onum) from Orders where Odate = '1990-10-03';
+
+OUTPUT :- 
+
++-------------+
+| count(Onum) |
++-------------+
+|           5 |
++-------------+
+
+
+Q.2.
+
+Answer :- 
+
+select count(ifnull(City,0)) from Customers;
+
+OUTPUT :- 
+
++-----------------------+
+| count(ifnull(City,0)) |
++-----------------------+
+|                     7 |
++-----------------------+
+
+
+Q.3.
+
+Answer :- 
+
+select MIN(Amt) from Orders GROUP BY Snum;
+
+OUTPUT :- 
+
++----------+
+| MIN(Amt) |
++----------+
+|   767.19 |
+|    75.75 |
+|  1713.23 |
+|  1900.10 |
+|    18.69 |
++----------+
+
+
+Q.4.
+
+Answer :- 
+
+select Cname from Customers where Cname like 'G%' ORDER BY Cname asc;
+
+OUTPUT :- 
+
++----------+
+| Cname    |
++----------+
+| Giovanni |
+| Grass    |
++----------+
+
+
+Q.5.
+
+Answer :- 
+
+select distinct City, MAX(Rating) from Customers GROUP BY City;
+
+OUTPUT :- 
+
++----------+-------------+
+| City     | MAX(Rating) |
++----------+-------------+
+| Berlin   |         300 |
+| London   |         100 |
+| Rome     |         200 |
+| San Jose |         300 |
++----------+-------------+
+
+
+Q.6.
+
+Answer :- 
+
+select distinct Odate, count(Snum) from Orders GROUP BY Odate;
+
+OUTPUT :- 
+
++------------+-------------+
+| Odate      | count(Snum) |
++------------+-------------+
+| 1990-10-03 |           5 |
+| 1990-10-04 |           2 |
+| 1990-10-05 |           1 |
+| 1990-10-06 |           2 |
++------------+-------------+
+
+
+
+
