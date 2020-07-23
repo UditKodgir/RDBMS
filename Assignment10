@@ -1,0 +1,37 @@
+						Assignment 10
+
+
+
+Q.1.
+
+Answer :- 
+
+select a.Sname, b.Sname, a.City from SalesPeople a, SalesPeople b where a.city = b.city AND a.Sname < b.Sname;
+
+OUTPUT :- 
+
++--------+-------+--------+
+| Sname  | Sname | City   |
++--------+-------+--------+
+| Motika | Peel  | London |
++--------+-------+--------+
+
+
+Q.2.
+
+Answer :- 
+
+select b.Cname, b.City, b.Rating from Customers a, Customers b where a.Rating = b.Rating AND a.Cname = "Hoffman";
+
+OUTPUT :- 
+
++---------+--------+--------+
+| Cname   | City   | Rating |
++---------+--------+--------+
+| Hoffman | London |    100 |
+| Clemens | London |    100 |
+| Pereira | Rome   |    100 |
++---------+--------+--------+
+
+
+
