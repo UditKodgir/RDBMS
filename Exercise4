@@ -1,0 +1,207 @@
+			Exercise 4
+
+
+
+Q.1.
+
+Answer :-
+
+select MIN(Status) from SUPPLIER;
+
+OUTPUT :-
+
++-------------+
+| MIN(Status) |
++-------------+
+|          10 |
++-------------+
+
+
+Q.2.
+
+Answer :-
+
+select  MAX(Weight) from PARTS;
+
+OUTPUT :-
+
++-------------+
+| MAX(Weight) |
++-------------+
+|       78.98 |
++-------------+
+
+
+Q.3.
+
+Answer :-
+
+select AVG(Weight) from PARTS;
+
+OUTPUT :-
+
++-------------+
+| AVG(Weight) |
++-------------+
+|   54.466668 |
++-------------+
+
+
+Q.4.
+
+Answer :-
+
+select Qty from SUPPLIER_PARTS_PROJECTS where `P#` = 'P1';
+
+OUTPUT :-
+
++--------+
+| Qty    |
++--------+
+| 235.75 |
++--------+
+
+
+Q.5.
+
+Answer :-
+
+select `P#`, SUM(Qty) from SUPPLIER_PARTS_PROJECTS GROUP BY `P#`;
+
+OUTPUT :-
+
++------+----------+
+| P#   | SUM(Qty) |
++------+----------+
+| P1   |   235.75 |
+| P2   |   123.45 |
+| P3   |   347.20 |
+| P4   |   243.55 |
+| P6   |   523.35 |
++------+----------+
+
+
+Q.6.
+
+Answer :-
+
+select `P#`, AVG(Qty) from SUPPLIER_PARTS_PROJECTS GROUP BY `P#`;
+
+OUTPUT :-
+
++------+------------+
+| P#   | AVG(Qty)   |
++------+------------+
+| P1   | 235.750000 |
+| P2   | 123.449997 |
+| P3   | 173.599998 |
+| P4   | 243.550003 |
+| P6   | 523.349976 |
++------+------------+
+
+
+Q.7.
+
+Answer :-
+
+select `P#`, MAX(Qty) from SUPPLIER_PARTS_PROJECTS where Qty > 800 GROUP BY `P#`;
+
+OUTPUT :-
+
+Empty set (0.00 sec)
+
+
+Q.8.
+
+Answer :-
+
+select Sname, Status, COUNT(Status) from SUPPLIER GROUP BY Sname, Status;
+
+OUTPUT :-
+
++--------+--------+---------------+
+| Sname  | Status | COUNT(Status) |
++--------+--------+---------------+
+| ABC    |     10 |             1 |
+| arun   |     30 |             1 |
+| jacker |     50 |             1 |
+| Jolly  |     40 |             1 |
+| logon  |     60 |             1 |
+| XYZ    |     20 |             1 |
++--------+--------+---------------+
+
+
+Answer :- 
+
+select  Status, COUNT(Status) from SUPPLIER GROUP BY  Status;
+
+OUTPUT :- 
+
++--------+---------------+
+| Status | COUNT(Status) |
++--------+---------------+
+|     10 |             1 |
+|     20 |             1 |
+|     30 |             1 |
+|     40 |             1 |
+|     50 |             1 |
+|     60 |             1 |
++--------+---------------+
+
+
+Q.9.
+
+Answer :-
+
+select Distinct City, count(`J#`) from PROJECTS GROUP BY City;
+
+OUTPUT :-
+
++----------+-------------+
+| City     | count(`J#`) |
++----------+-------------+
+| Athens   |           1 |
+| Boston   |           1 |
+| London   |           1 |
+| New York |           1 |
+| Paris    |           1 |
+| Sydeny   |           1 |
++----------+-------------+
+
+
+Q.10.
+
+Answer :-
+
+COUNT(Status) :- will only count the number of rows in the SUPPLIER table Collumn Status;
+
+COUNT(*) :- will count the Number of rows in the SUPPLIER table;
+
+Q.11.
+
+Answer :-
+
+select case
+    -> when Status = 10 then 'Ten'
+    -> when Status = 20 then 'Twenty'
+    -> when Status = 30 then 'Thirty'
+    -> when Status = 40 then 'Fourty'
+    -> when Status = 50 then 'Fifty'
+    -> when Status = 60 then 'Sixty'
+    -> end  Status, COUNT(Status) as count
+    -> from SUPPLIER GROUP BY Status;
+
+OUTPUT :-
+
++--------+-------+
+| Status | count |
++--------+-------+
+| Ten    |     1 |
+| Twenty |     1 |
+| Thirty |     1 |
+| Fourty |     1 |
+| Fifty  |     1 |
+| Sixty  |     1 |
++--------+-------+
+
+
