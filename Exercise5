@@ -109,97 +109,71 @@ Q.7.
 
 Answer :- 
 
+select Sname, Qty, Status from SUPPLIER S, SUPPLIER_PARTS_PROJECTS S1 where S.`S#` = S1.`S#` AND S.Status = 20;
+
 OUTPUT :-
+
++-------+--------+--------+
+| Sname | Qty    | Status |
++-------+--------+--------+
+| XYZ   | 243.55 |     20 |
++-------+--------+--------+
 
 
 Q.8.
 
 Answer :- 
 
+select Pname from PARTS P, SUPPLIER_PARTS_PROJECTS S where P.`P#` = S.`P#` AND P.Weight > 14;
+
 OUTPUT :-
+
++--------+
+| Pname  |
++--------+
+| part b |
+| part d |
+| part c |
+| part f |
+| part c |
+| part a |
++--------+
 
 
 Q.9.
 
 Answer :- 
 
+select * from PROJECTS P, SUPPLIER_PARTS_PROJECTS S where P.`J#` = S.`J#` AND S.Qty > 500;
+
 OUTPUT :-
+
++------+-------+----------+------+------+------+--------+
+| J#   | Jname | City     | S#   | P#   | J#   | Qty    |
++------+-------+----------+------+------+------+--------+
+| J6   | ALS   | New York | S4   | P6   | J6   | 523.35 |
++------+-------+----------+------+------+------+--------+
 
 
 Q.10.
 
 Answer :- 
 
+select Pname, Qty from PARTS P, SUPPLIER_PARTS_PROJECTS S where P.`P#` = S.`P#` AND S.Qty < 15;
+
 OUTPUT :-
+
++------+-------+----------+------+------+------+--------+
+| J#   | Jname | City     | S#   | P#   | J#   | Qty    |
++------+-------+----------+------+------+------+--------+
+| J6   | ALS   | New York | S4   | P6   | J6   | 523.35 |
++------+-------+----------+------+------+------+--------+
 
 
 Q.11.
 
 Answer :- 
 
-OUTPUT :-
+select b.ename as Employee, a.ename as Manager from emp a , emp b where b.mgr = a.empno ;
 
 
-
-
-#2
-
-
-
-
-#3
-
-select Jname, Qty from PROJECTS P, SUPPLIER_PARTS_PROJECTS S1 where P.`J#` = S1.`J#`;
-
-
-#4
-
-select Pname, Jname, Sname, Qty from SUPPLIER S, PARTS P, PROJECTS P1, SUPPLIER_PARTS_PROJECTS S1 where S.`S#` = S1.`S#` AND  P.`P#` = S1.`P#` AND P1.`J#` = S1.`J#`;
-
-
-
-#5
-
-select S.Sname, P.City from SUPPLIER S, PARTS P, PROJECTS P1, SUPPLIER_PARTS_PROJECTS S1
-where S.`S#` = S1.`S#`AND P.`P#` = S1.`P#`AND P1.`J#` = S1.`J#` AND P.City = P1.City;
-      
-
-
-#6
-
-select Pname, Color, Qty from PARTS, SUPPLIER_PARTS_PROJECTS where Color = 'red' AND PARTS.`P#` = SUPPLIER_PARTS_PROJECTS.`P#`;
-
-
-
-
-
-
-#7
-
-select Sname, Qty, Status from SUPPLIER S, SUPPLIER_PARTS_PROJECTS S1 where S.`S#` = S1.`S#` AND S.Status = 20;
-
-
-
-#8
-
-select Pname from PARTS P, SUPPLIER_PARTS_PROJECTS S where P.`P#` = S.`P#` AND P.Weight > 14;
-
-
-
-#9
-
-select * from PROJECTS P, SUPPLIER_PARTS_PROJECTS S where P.`J#` = S.`J#` AND S.Qty > 500;
-
-
-
-#10
-
-select Pname, Qty from PARTS P, SUPPLIER_PARTS_PROJECTS S where P.`P#` = S.`P#` AND S.Qty < 15;
-
-
-
-
-#11
-
-select b.ename as Employee, a.ename as Manager from emp a , emp b 
-where b.mgr = a.empno ;
