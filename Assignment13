@@ -1,0 +1,63 @@
+						Assignment 13
+
+
+
+Q.1.
+
+Answer :-
+
+select Cname, City, if(Rating < 200,'Low Rating','High Rating') from Customers UNION select Cname, City, if(Rating >= 200,'High Rating','Low Rating') from Customers;
+
+OUTPUT :-
+
++----------+----------+---------------------------------------------+
+| Cname    | City     | if(Rating < 200,'Low Rating','High Rating') |
++----------+----------+---------------------------------------------+
+| Hoffman  | London   | Low Rating                                  |
+| Giovanni | Rome     | High Rating                                 |
+| Liu      | San Jose | High Rating                                 |
+| Grass    | Berlin   | High Rating                                 |
+| Clemens  | London   | Low Rating                                  |
+| Cisneros | San Jose | High Rating                                 |
+| Pereira  | Rome     | Low Rating                                  |
++----------+----------+---------------------------------------------+
+
+
+Q.2.
+
+Answer :-
+
+select Sname, Cname, Cnum, Snum from Customers join SalesPeople using(Snum) where Customers.Snum IN (select Snum from Customers GROUP BY Snum HAVING COUNT(Snum) > 1) ORDER BY Sname, Cname;
+
+
+OUTPUT :-
+
++--------+---------+------+------+
+| Sname  | Cname   | Cnum | Snum |
++--------+---------+------+------+
+| Peel   | Clemens | 2006 | 1001 |
+| Peel   | Hoffman | 2001 | 1001 |
+| Serres | Grass   | 2004 | 1002 |
+| Serres | Liu     | 2003 | 1002 |
++--------+---------+------+------+
+
+
+Q.3.
+
+Answer :-
+
+select Snum from SalesPeople where City ='san jose' UNION select distinct Snum from Orders where Snum IN (select Snum from Orders where Odate = '1990-10-03');
+
+OUTPUT :-
+
++------+
+| Snum |
++------+
+| 1002 |
+| 1007 |
+| 1001 |
+| 1004 |
++------+
+
+
+
