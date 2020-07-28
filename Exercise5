@@ -102,8 +102,6 @@ Answer :-
 
 select Pname, Color, Qty from PARTS P, SUPPLIER_PARTS_PROJECTS S where Color = 'red' AND P.`P#` = S.`P#`;
 
-OUTPUT :-
-
 
 Q.7.
 
@@ -174,6 +172,18 @@ Q.11.
 
 Answer :- 
 
-select b.ename as Employee, a.ename as Manager from emp a , emp b where b.mgr = a.empno ;
+select b.EName as Employee, a.EName as Manager from EMP a , EMP b where b.Mgr = a.EmpNo ;
+
+OUTPUT :-
+
++----------+---------+
+| Employee | Manager |
++----------+---------+
+| Arun     | Jack    |
+| Ali      | Arun    |
+| Kirun    | Arun    |
+| Thomas   | Jack    |
++----------+---------+
+
 
 
