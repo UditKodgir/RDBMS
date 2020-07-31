@@ -1,0 +1,27 @@
+						Assignment 20
+
+
+
+Q.2.
+
+Answer :- 
+
+create view Commissions as 
+select Snum, comm from SalesPeople  
+where Comm between .10 and .20  with  check option; 
+
+
+Q.3.
+
+Answer :- 
+
+create table IF NOT EXISTS `Orders_New`(
+Onum int(4),
+Amt float(7,2),
+Odate date default CURRENT_TIMESTAMP,
+Cnum int(4),
+Snum int(4)
+);
+
+create view EntryOrders as 
+select * from Orders_New;
