@@ -1,0 +1,30 @@
+						Assignment 18
+
+
+
+Q.1.
+
+Answer :-
+
+create table CityOrders as 
+select Onum, amt, Snum, Cnum, City
+from Orders natural join Customers;
+
+alter table CityOrders add constraint Onum_fk foreign key (Onum) references Orders(Onum);
+
+
+Q.2.
+
+Answer ;-
+
+create table IF NOT EXISTS Orders( 
+Onum int(4),
+Amt float(7,2),
+Odate date,
+Cnum int(4),
+Snum int(4),
+prev int(4),
+foreign key(prev) references CityOrders(Onum)
+);
+
+
