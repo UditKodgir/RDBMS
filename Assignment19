@@ -1,0 +1,48 @@
+						Assignment 19
+
+
+
+Q.1.
+
+Answer :-
+
+create view Customers_view as 
+select * from Customers
+where Rating =(select MAX(Rating) from Customers);
+
+
+Q.2.
+
+Answer :-
+
+create view SalesPeople_view as
+select City , count(*)  
+from SalesPeople
+GROUP BY City;
+
+
+Q.3.
+
+Answer :-
+
+create view SalesPeople_Orders_view as
+select SalesPeople.Snum, SalesPeople.Sname, count(Orders.Onum) , avg(Orders.Amt)
+from Orders, SalesPeople
+where Orders.Snum = SalesPeople.Snum
+GROUP BY SalesPeople.Snum, SalesPeople.Sname;
+
+
+Q.4.
+
+Answer :-
+
+create view SalesPeople_Customers_view as
+select SalesPeople.Sname, count(Customers.Snum)
+from SalesPeople, Customers
+where SalesPeople.Snum = Customers.Snum
+GROUP BY  SalesPeople.Sname
+having count(Customers.Snum) > 1;
+
+
+
+
