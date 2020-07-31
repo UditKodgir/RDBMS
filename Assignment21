@@ -1,0 +1,46 @@
+						Assignment 21
+
+
+
+Q.1. 
+
+Answer :-
+
+grant update on Customers to Amit;
+
+
+2) 
+
+Answer :-
+
+AKshay_mysql> grant select on Orders to Manoj;
+Manoj_mysql> grant select on Orders to public;
+
+
+Q.3.
+
+Answer :-
+ 
+revoke insert on SalesPeople from Ajita;
+	
+
+Q.4. 	
+
+create view Customers1
+as
+select * from Customers where Rating between 100 and 500; 
+
+Grant insert, update on Customers to Abhijeet
+	
+
+Q.5
+
+Answer :-
+ 	
+create view Customers1
+as
+select * from Customers where Rating = (select MIN(Rating) from Customers) ;
+	
+Grant select on Customers1 to Vikram;
+
+
